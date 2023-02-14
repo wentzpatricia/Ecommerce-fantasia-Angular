@@ -1,0 +1,110 @@
+$background-color-buttons-details: #a60321;
+$background-color-buttons-details-2: #f2e0d5;
+$color-font-title-and-details: #8c5b3e;
+$border-bottom: solid 1px #8c5b3e;
+
+$tablet-width: 768px;
+$mobile-width: 535px;
+
+img {
+  width: 500px;
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+.detail-product {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.list-products {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  margin-top: 30px;
+  &__img {
+    border: none;
+    margin: 10px;
+    @include mobile {
+      margin: 25px;
+    }
+  }
+  &__title {
+    text-align: center;
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+  &__price {
+    font-size: 25px;
+    border: 1px solid $background-color-buttons-details;
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &__description {
+    text-align: center;
+    font-size: 15px;
+    @include tablet {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  &__add {
+    margin: 10px;
+    border-style: none;
+    background-color: $background-color-buttons-details;
+    color: $background-color-buttons-details-2;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+  &__back {
+    margin: 10px;
+    background-color: #fff;
+    border-style: none;
+    color: $color-font-title-and-details;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.2);
+    }
+  }
+  &__store {
+    margin: 10px;
+    background-color: #fff;
+    border-style: none;
+    color: $background-color-buttons-details;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.2);
+    }
+  }
+}

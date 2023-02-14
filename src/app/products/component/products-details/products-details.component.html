@@ -1,0 +1,27 @@
+<section class="detail-product">
+  <ul class="list-products">
+    <li class="list-products__img">
+      <img src="{{ product.image }}" alt="{{ product.description }}" />
+    </li>
+    <li class="list-products__title">
+      {{ product.name }}
+    </li>
+    <li class="list-products__price">
+      {{ product.price | currency: "BRL" }}
+    </li>
+    <li class="list-products__description">
+      {{ product.description }}
+    </li>
+  </ul>
+  <div class="btn">
+    <button class="btn__add" (click)="addtocart(product)">
+      Adicionar ao carrinho
+    </button>
+    <button class="btn__back" routerLink="/products">
+      <mat-icon>undo</mat-icon>
+    </button>
+    <button class="btn__store" routerLink="/cart">
+      <mat-icon>store</mat-icon>
+    </button>
+  </div>
+</section>

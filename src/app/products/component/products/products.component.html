@@ -1,0 +1,29 @@
+<main>
+  <section class="main">
+    <div class="main__title">
+      <h2>Produtos</h2>
+    </div>
+    <ul class="list-products" *ngFor="let product of products">
+      <li>
+        <button
+          class="list-products__img"
+          routerLink="/products/{{ product.id }}"
+        >
+          <img src="{{ product.image }}" />
+        </button>
+      </li>
+
+      <li class="list-products__title">
+        {{ product.name }}
+      </li>
+      <li class="list-products__price">
+        {{ product.price | currency: "BRL" }}
+      </li>
+      <li>
+        <button class="list-products__btn" (click)="addtocart(product)">
+          Adicionar ao carrinho
+        </button>
+      </li>
+    </ul>
+  </section>
+</main>
