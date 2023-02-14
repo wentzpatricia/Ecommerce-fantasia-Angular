@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Batom Fenty Beauty",
+      "price": 89.55,
+      "description": "Lindo batom rosa envelhecido cintilante by Fenty Beauty",
+      "image": "../../../assets/img/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Delineador L'oreal Paris",
+      "price": 60.3,
+      "description": "Delineador na cor preta de alta duração by L'oreal Paris",
+      "image": "../../../assets/img/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Kit batom, blush e gloss Gucci",
+      "price": 255.3,
+      "description": "Kit especial com batom na cor nude, gloss transparente e blush na cor pêssego by Gucci",
+      "image": "../../../assets/img/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Batom Boticário",
+      "price": 35.9,
+      "description": "Lindo batom vermelho matte by Boticário",
+      "image": "../../../assets/img/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Batom Gucci",
+      "price": 99.0,
+      "description": "Batom vermelho cremoso by Gucci",
+      "image": "../../../assets/img/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Kit batom e pó compacto Gucci",
+      "price": 155.35,
+      "description": "Kit especial com batom na cor vermelha e pó compacto na cor 3 by Gucci",
+      "image": "../../../assets/img/6.jpg"
+    }
+  ]
+}
