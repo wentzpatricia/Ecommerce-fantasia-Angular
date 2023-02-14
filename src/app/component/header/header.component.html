@@ -1,0 +1,74 @@
+<header>
+  <div class="logo">
+    <h1>Ecommerce</h1>
+  </div>
+  <div class="header">
+    <div
+      class="header__icon-nav-responsive"
+      [class.iconMenuResponsive]="iconMenuResponsive"
+      (click)="openMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav
+      class="header__nav"
+      [class.animationItensMenuResponsive]="animationItensMenuResponsive"
+    >
+      <ul>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Avaliações</a></li>
+        <li><a href="#">Nosso Produto</a></li>
+      </ul>
+    </nav>
+    <div class="header__dropdown">
+      <button class="header__btn" (click)="dropDown()">
+        <mat-icon>store</mat-icon>
+        <div class="btn__totalItens">
+          {{ totalItem }}
+        </div>
+      </button>
+      <ng-container *ngIf="products.length == 0">
+        <div class="dropdown-content" [class.show]="openDropDown">
+          <div class="task">
+            <span>Ops, seu carrinho está vazio!</span>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="products.length != 0">
+        <div class="dropdown-content" [class.show]="openDropDown">
+          <div class="total-items">
+            <div class="total-items__icon">
+              <mat-icon>store</mat-icon>
+              <div class="qtd-products">
+                {{ totalItem }}
+              </div>
+            </div>
+            <div>
+              <h4>
+                Total da Compra(itens {{ products.length }}):
+                {{ cartService.getTotalPrice() | currency: "BRL" }}
+              </h4>
+            </div>
+          </div>
+          <ul class="list-products" *ngFor="let item of products">
+            <li class="list-products__img">
+              <img src="{{ item.image }}" alt="{{ item.description }}" />
+            </li>
+            <li class="list-products__title">
+              {{ item.name }}
+            </li>
+            <li>Quantidade: {{ item.quantity }}</li>
+            <li class="list-products__price">
+              Preço: {{ item.price | currency: "BRL" }}
+            </li>
+          </ul>
+          <div class="btn">
+            <button class="btn__checkout" routerLink="/cart">Checkout</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</header>
