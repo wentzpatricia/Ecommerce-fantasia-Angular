@@ -1,0 +1,60 @@
+<ng-container *ngIf="products.length != 0">
+  <section class="card-items">
+    <div class="card-items__title">
+      <h2>Meu Carrinho</h2>
+    </div>
+    <ul class="list-products" *ngFor="let item of products">
+      <li class="list-products__img">
+        <img src="{{ item.image }}" alt="{{ item.description }}" />
+      </li>
+      <li class="list-products__title">Nome do Produto: {{ item.name }}</li>
+      <li class="list-products__price">
+        Preço: {{ item.price | currency: "BRL" }}
+      </li>
+      <li class="list-products__quantity">Quantidade: {{ item.quantity }}</li>
+      <li class="list-products__description">
+        {{ item.description }}
+      </li>
+      <li>
+        <button class="list-products__btn" (click)="removeItem(item)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </li>
+    </ul>
+    <div class="btn-card">
+      <button class="btn-card__btn-limpar" (click)="emptyCart()">
+        Limpar Carrinho
+      </button>
+      <button class="btn-card__btn-comprar-mais" routerLink="/products">
+        Compre mais!
+      </button>
+    </div>
+    <div class="card-items__total-items">
+      <h4>
+        Total da Compra(itens {{ products.length }}):
+        {{ this.cartService.getTotalPrice() | currency: "BRL" }}
+      </h4>
+    </div>
+  </section>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="container__title">
+      <h4>Meu Carrinho</h4>
+    </div>
+    <div class="card">
+      <figure class="card__img">
+        <img
+          src="../../../assets/img/sadface.png"
+          alt="ilustração de uma mulher se sentindo sem graça"
+        />
+      </figure>
+      <div class="card__text">
+        <h5>Ops, seu carrinho está vazio!</h5>
+        <h5>Adicione algum item agora</h5>
+        <button routerLink="/products" class="card__btn">Compre Agora</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
